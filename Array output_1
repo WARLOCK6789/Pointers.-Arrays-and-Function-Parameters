@@ -4,12 +4,7 @@ void print(int* array, int size)
 {
     for (int i = 0; i < size; i++)
     {
-        std::cout << array[i];
-
-        if (i < size - 1)
-        {
-            std::cout << " ";
-        }
+        std::cout << array[i] << " ";
     }
     std::cout << std::endl;
 }
