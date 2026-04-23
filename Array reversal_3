@@ -1,0 +1,47 @@
+#include <iostream>
+#include <Windows.h>
+
+void print(int* array, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        std::cout << array[i];
+
+        if (i < size - 1)
+        {
+            std::cout << " ";
+        }
+    }
+    std::cout << std::endl;
+}
+
+void reverse(int* array, int size)
+
+{
+    for (int i = 0; i < size / 2; i++)
+
+    {
+        int temporary = array[i];
+        array[i] = array[size - 1 - i];
+        array[size - 1 - i] = temporary;
+    }
+}
+
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    int array[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    int size = sizeof(array) / sizeof(array[0]);
+
+    std::cout << "До функции reverse: ";
+    print(array, size);
+
+    reverse(array, size);
+
+    std::cout << "После функции reverse: ";
+    print(array, size);
+
+    return EXIT_SUCCESS;
+}
